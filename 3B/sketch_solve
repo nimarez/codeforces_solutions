@@ -1,0 +1,27 @@
+(t_i, p_i) for type and carrying capacity
+
+sort by carrying capacity, choose the lightest type?
+
+(2, 5)
+(2, 5)
+(1, 4)
+(1, 4)
+(1, 4)
+(1, 4)
+
+sort the ones and twos by value carrying capacity.
+while capacity:
+	while there is a pair of ones and a two:
+		Choose the more of a pair of ones, or a two
+	if no twos or no ones:
+		Greedily fill with the rest of the other
+	if twos exist but only one one
+		if remaining carrying capacity is odd, you're ok
+		if not, compare smallest two that would make it if no one was used. Choose the bigger one
+
+proof of optimality:
+	line 14/15 is optimal bc they are equivalent capacity and there is no loss of opportunity
+
+
+
+

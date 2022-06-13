@@ -90,7 +90,7 @@ def main():
     n_est = 2*math.pi / a_arc_est
     n = Fraction(n_est).limit_denominator(100).numerator
     a_arc = (n - 2) * math.pi / n # actual possible a_arc
-    return n * r * r * math.sin(a_arc / 2) * math.cos(a_arc / 2)
+    return 0.5 * n * r * r * math.sin(a_arc)
         
 
 

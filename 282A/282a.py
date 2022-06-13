@@ -1,0 +1,1 @@
+if __name__ == "__main__": print(sum(-1 if input()[1] == "-" else 1 for _ in range(int(input())))) # breh

@@ -1,0 +1,53 @@
+Input
+The first line contains a pair of integer numbers n and v (1 ≤ n ≤ 105; 1 ≤ v ≤ 109), where n is the number of waterborne vehicles in the boat depot, 
+and v is the truck body volume of the lorry in cubic metres. 
+The following n lines contain the information about the waterborne vehicles, 
+that is a pair of numbers ti, pi (1 ≤ ti ≤ 2; 1 ≤ pi ≤ 104), 
+where ti is the vehicle type (1 – a kayak, 2 – a catamaran), 
+and pi is its carrying capacity. 
+The waterborne vehicles are enumerated in order of their appearance in the input file.
+
+Output
+In the first line print the maximum possible carrying capacity of the set. 
+In the second line print a string consisting of the numbers of the vehicles that make the optimal set. 
+If the answer is not unique, print any of them.
+
+
+
+
+
+
+(t_i, p_i) for type and carrying capacity
+
+sort by carrying capacity, choose the lightest type?
+
+(2, 5)
+(2, 5)
+(1, 4)
+(1, 4)
+(1, 4)
+(1, 4)
+
+sort the ones and twos by value carrying capacity.
+while capacity:
+	while there is a pair of ones and a two:
+		Choose the more of a pair of ones, or a two
+	if no twos or no ones:
+		Greedily fill with the rest of the other
+	if twos exist but only one one
+		if remaining carrying capacity is odd, you're ok
+		if not, compare smallest two that would make it if no one was used. Choose the bigger one
+
+proof of optimality:
+	line 14/15 is optimal bc they are equivalent capacity and there is no loss of opportunity
+
+
+
+dang, my thinking is so linear... always this then that and not clean solutions like below:
+
+actual solution:
+**any carrying capacity is a mixture of ones and twos**
+make a cumulative sum list of ones ordered by greatest to least, same for twos. 
+Each element at index i tells how much carrying capacity would be gained if all the it used ones/twos.
+
+Iterate through the ones cum sum, and consider taking the rest in twos at each index. Find the index that maximizes this combination.
